@@ -26,3 +26,82 @@ The goal is to develop both a theoretical and practical framework for building l
 
 **Example Equation (text only):**  
 For a probabilistic AND gate:
+Probabilistic Logic Circuits (Summary)
+
+Abstract:
+A simplified model for simulating logic circuits using raw probabilities for each gate. Inputs and outputs are represented as probabilities of being 1. Can run on classical or quantum-inspired systems.
+
+
+---
+
+Probabilistic Logic Gates
+
+AND: P(Y=1) = P(A=1) * P(B=1)
+
+OR: P(Y=1) = P(A=1) + P(B=1) - P(A=1)*P(B=1)
+
+XOR: P(Y=1) = P(A=1)*(1-P(B=1)) + (1-P(A=1))*P(B=1)
+
+NOT: P(Y=1) = 1 - P(A=1)
+
+NAND: P(Y=1) = 1 - P(A=1)*P(B=1)
+
+NOR: P(Y=1) = 1 - (P(A=1) + P(B=1) - P(A=1)*P(B=1))
+
+
+
+---
+
+Algorithm (Steps)
+
+1. Initialize input probabilities.
+
+
+2. Compute gate outputs using above rules.
+
+
+3. Store outputs for next gates.
+
+
+4. Extract final probabilities.
+
+
+5. Optionally, measure outputs as 0 or 1.
+
+
+
+
+---
+
+Example: Probabilistic Full Adder
+
+Inputs: A=0.6, B=0.7, Cin=0.5
+
+Gates:
+
+Temp = XOR(A, B)
+
+Sum = XOR(Temp, Cin)
+
+T1 = AND(A, B)
+
+T2 = AND(Temp, Cin)
+
+Carry = OR(T1, T2)
+
+
+Outputs (Probabilities): Temp=0.46, Sum=0.73, T1=0.42, T2=0.23, Carry=0.55
+
+
+---
+
+Advantages
+
+Simple, general model without AI.
+
+Runs on classical or quantum-inspired systems.
+
+Scalable for many inputs and gates.
+
+Suitable for academic publishing.
+
